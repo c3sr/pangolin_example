@@ -34,7 +34,7 @@ Then, configure the example code with the install location of pangolin
 ```bash
 git clone git@github.com:c3sr/pangolin_example.git 
 mkdir build
-cmake .. -DUSE_SUBDIRECTORY=OFF -DCMAKE_MODULE_PATH=/tmp/pangolin
+cmake .. -DEXTERNAL_PANGOLIN=ON -DCMAKE_MODULE_PATH=/tmp/pangolin
 make
 ```
 
