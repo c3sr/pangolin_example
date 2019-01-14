@@ -21,6 +21,14 @@ First, clone and install pangolin (at a known-good commit, for the sake of examp
 
 ```bash
 git clone --recursive git@github.com:c3sr/graph_challenge.git
+```
+
+if you don't use git with SSH, you could do
+
+```bash
+git clone --recursive https://github.com/c3sr/pangolin_example.git
+```
+
 cd graph_challenge
 git checkout 6a8c59ac5e5854e2971be91911720daed7f70d17
 cd ..
