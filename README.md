@@ -6,11 +6,31 @@ There are two styles of using Pangolin.
 * The first is to include the pangolin source code in your project, and use the CMake `add_subdirectory()` function to add the Pangolin targets to your build.
 * The second is to install Pangolin separately, and use the CMake `find_package(pangolin CONFIG REQUIRED)` facility along with `-CMAKE_MODULE_PATH` to tell your code where Pangolin's headers and libraries are.
 
+## Prerequisites
+
+Pangolin requires CMake 3.12+
+
+```bash
+cmake --version
+```
+
+Follow instructions on the [CMake website](cmake.org) to install CMake 3.12+.
+
 ## Building from source (add_subdirectory method)
 
 ```bash
-git clone --recursive git@github.com:c3sr/pangolin_example.git 
-mkdir build
+git clone --recursive git@github.com:c3sr/pangolin_example.git
+```
+
+if you don't use git with SSH, you could do
+
+```bash
+git clone --recursive https://github.com/c3sr/pangolin_example.git
+```
+
+```bash
+cd pangolin_example
+mkdir build && cd build
 cmake ..
 make
 ```
@@ -32,6 +52,7 @@ git clone --recursive https://github.com/c3sr/pangolin_example.git
 cd graph_challenge
 git checkout 6a8c59ac5e5854e2971be91911720daed7f70d17
 cd ..
+mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/tmp/pangolin
 make install
 ```
