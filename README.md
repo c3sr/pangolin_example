@@ -15,6 +15,28 @@
 
 ## Building the Example
 
-        mkdir build
-        cmake ..
-        make
+```bash
+$ git version
+git version 2.17.1
+```
+
+Run the following commands
+
+```bash
+git clone --recursive git@github.com:c3sr/pangolin_example.git 
+mkdir build
+cmake ..
+make
+```
+## If you cloned without --recursive
+
+```bash
+$ git version
+git version 2.17.1
+```
+
+Run the following commands
+
+```bash
+git submodule update --init --remote
+```
