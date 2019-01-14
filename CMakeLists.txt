@@ -1,6 +1,8 @@
 # Pangolin requires CMake 3.12
 cmake_minimum_required(VERSION 3.12)
 
+option(EXTERNAL_PANGOLIN ON "Use external Pangolin (with -DCMAKE_MODULE_PATH)")
+
 # Pangolin uses Hunter, so we'll require it here
 include("cmake/HunterGate.cmake")
 
@@ -22,7 +24,11 @@ add_executable(example src/example.cpp)
 
 
 # add pangolin targets
+if (PANGOLIN_SUBDIRECTORY)
 add_subdirectory("thirdparty/pangolin")
+else()
+find_package(pangolin CONFIG REQUIRED)
+endif()
 
 # link against the 32-bit pangolin library
 target_link_libraries(example pangolin::pangolin32)
