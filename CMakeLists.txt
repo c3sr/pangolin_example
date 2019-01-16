@@ -14,20 +14,17 @@ HunterGate(
     LOCAL
 )
 
-project(PangolinExample LANGUAGES C CXX CUDA VERSION 0.1.0)
-
-# Use hunter to add the pangolin package
-#hunter_add_package(pangolin)
+project(PangolinExample LANGUAGES CXX CUDA VERSION 0.1.0)
 
 # add our example as an executable
 add_executable(example src/example.cpp)
 
 
 # add pangolin targets
-if (PANGOLIN_SUBDIRECTORY)
-add_subdirectory("thirdparty/pangolin")
+if (EXTERNAL_PANGOLIN)
+    find_package(pangolin CONFIG REQUIRED)
 else()
-find_package(pangolin CONFIG REQUIRED)
+    add_subdirectory("thirdparty/pangolin")
 endif()
 
 # link against the 32-bit pangolin library
