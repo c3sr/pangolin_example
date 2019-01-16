@@ -1,19 +1,21 @@
-#include "graph/configure.hpp"
-#include "graph/logger.hpp"
+#include "graph/pangolin.hpp"
 
 int main(void) {
     LOG(info, "Pangolin v{}.{}.{}", GRAPH_VERSION_MAJOR, GRAPH_VERSION_MINOR, GRAPH_VERSION_PATCH);
 
-    /*
-#define GRAPH_VERSION_MAJOR @PROJECT_VERSION_MAJOR@
-#define GRAPH_VERSION_MINOR @PROJECT_VERSION_MINOR@
-#define GRAPH_VERSION_PATCH @PROJECT_VERSION_PATCH@
-#define GRAPH_VERSION_TWEAK @PROJECT_VERSION_TWEAK@
-#define GRAPH_VERSION "@PROJECT_VERSION@"
-#define GRAPH_GIT_REFSPEC "@GIT_REFSPEC@"
-#define GRAPH_GIT_HASH "@GIT_HASH@"
-#define GRAPH_GIT_LOCAL_CHANGES "@GIT_LOCAL_CHANGES@"
+    // edges that make up a triangle
+    EdgeList triangleEdges({
+        Edge(1,2),
+        Edge(1,3),
+        Edge(2,3)
 
-    */
+    });
+
+    Config c;
+    c.gpus_ = {0};
+
+    NvGraphTriangleCounter tc(c);
+    LOG(info, "Created NvGraphTriangleCounter");
+
     return 0;
 }
