@@ -40,16 +40,16 @@ make
 First, clone and install pangolin (at a known-good commit, for the sake of example)
 
 ```bash
-git clone --recursive git@github.com:c3sr/graph_challenge.git
+git clone --recursive git@github.com:c3sr/pangolin.git
 ```
 
 if you don't use git with SSH, you could do
 
 ```bash
-git clone --recursive https://github.com/c3sr/pangolin_example.git
+git clone --recursive https://github.com/c3sr/pangolin.git
 ```
 
-cd graph_challenge
+cd pangolin
 git checkout 6a8c59ac5e5854e2971be91911720daed7f70d17
 cd ..
 mkdir build && cd build
@@ -87,8 +87,7 @@ git submodule update --init --remote
 1. Create a new repository
 2. Add pangolin as a submodule
 
-        mkdir -p thirdparty/pangolin
-        git submodule add git@github.com:c3sr/graph_challenge.git thirdparty/pangolin
+        git submodule add git@github.com:c3sr/pangolin.git thirdparty/pangolin
         cd thirdparty/pangolin
         git checkout develop
         cd -
