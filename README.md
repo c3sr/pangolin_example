@@ -1,10 +1,10 @@
 # Pangolin Example
 
-This is an example C++ project that uses CMake to link against the Pangolin(github.com/c3sr/graph_challenge) library.
+This is an example C++ project that uses CMake to link against the Pangolin(github.com/c3sr/pangolin) library.
 There are two styles of using Pangolin.
 
 * The first is to include the pangolin source code in your project, and use the CMake `add_subdirectory()` function to add the Pangolin targets to your build.
-* The second is to install Pangolin separately, and use the CMake `find_package(pangolin CONFIG REQUIRED)` facility along with `-CMAKE_MODULE_PATH` to tell your code where Pangolin's headers and libraries are.
+* The second is to install Pangolin separately, and use the CMake `find_package(pangolin CONFIG REQUIRED)` facility along with `-DCMAKE_PREFIX_PATH` to tell your code where Pangolin's headers and libraries are.
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ Then, configure the example code with the install location of pangolin
 ```bash
 git clone git@github.com:c3sr/pangolin_example.git 
 mkdir build
-cmake .. -DEXTERNAL_PANGOLIN=ON -DCMAKE_MODULE_PATH=/tmp/pangolin
+cmake .. -DEXTERNAL_PANGOLIN=ON -DCMAKE_PREFIX_PATH=/tmp/pangolin
 make
 ```
 
