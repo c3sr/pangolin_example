@@ -1,3 +1,0 @@
-[submodule "thirdparty/pangolin"]
-	path = thirdparty/pangolin
-	url = git@github.com:c3sr/graph_challenge.git
