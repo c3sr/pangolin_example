@@ -8,13 +8,13 @@ There are two styles of using Pangolin.
 
 ## Prerequisites
 
-Pangolin requires CMake 3.12+
+Pangolin requires CMake 3.13+
 
 ```bash
 cmake --version
 ```
 
-Follow instructions on the [CMake website](cmake.org) to install CMake 3.12+.
+Follow instructions on the [CMake website](cmake.org) to install CMake 3.13+.
 
 ## Building from source (add_subdirectory method)
 
