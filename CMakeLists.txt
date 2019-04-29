@@ -9,12 +9,19 @@ include("cmake/HunterGate.cmake")
 # LOCAL specifies that cmake/Hunter/config.cmake controls our pagacke versions and sources
 # That file specifies that pangolin should be loaded from the git submodule in this repository
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/v0.23.55.tar.gz"
-    SHA1 "da31d97da47cdde05f958786b6729ba9b773bb17"
+    URL "https://github.com/ruslo/hunter/archive/v0.23.164.tar.gz"
+    SHA1 "7bcf092561389dbd70edb3fc228126ae4605e10c"
     LOCAL
 )
 
-project(PangolinExample LANGUAGES CXX CUDA VERSION 0.1.0)
+
+
+
+project(PangolinExample LANGUAGES CXX CUDA VERSION 0.1.1)
+hunter_add_package(spdlog)
+hunter_add_package(Catch)
+hunter_add_package(cub)
+
 
 # add our example as an executable
 add_executable(example src/example.cu)
@@ -27,5 +34,4 @@ else()
     add_subdirectory("thirdparty/pangolin")
 endif()
 
-# link against the 32-bit pangolin library
-target_link_libraries(example pangolin::pangolin32)
+target_link_libraries(example pangolin::pangolin)
