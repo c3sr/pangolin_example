@@ -5,6 +5,14 @@
 #include "pangolin/pangolin.cuh"
 
 int main(void) {
+
+  // call pangolin::init() somewhere
+  pangolin::init();
+
+  // You can set the logging level
+  pangolin::logger::set_level(pangolin::logger::Level::INFO);
+
+  // You can log messages using the pangolin logger.
   LOG(info, "Pangolin v{}.{}.{}", PANGOLIN_VERSION_MAJOR,
       PANGOLIN_VERSION_MINOR, PANGOLIN_VERSION_PATCH);
 
